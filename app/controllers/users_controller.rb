@@ -7,14 +7,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
-  def show
-    @user = User.find(params[:id])
-  end
-  
-  def create_move
-    render "create"
-  end
 
   def create
     user = User.new(uid: params[:uid], pass: BCrypt::Password.create(params[:pass]))
