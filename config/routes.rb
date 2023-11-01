@@ -1,24 +1,15 @@
 Rails.application.routes.draw do
+  resources :users, only: [:index, :new, :create, :destroy]
+  resources :tweets, only: [:index, :new, :create, :destroy]
+
+  get 'top/main'
+  get 'top/login_move'
+  post 'top/login'
+  get 'top/logout'
+  
   get 'likes/create'
   get 'likes/destroy'
-  resources :users, :tweets
- 
-  root 'tweets#index'
-  get 'tweets/new'
-  get 'tweets/create'
-  get 'tweets/destroy'
- 
-  get 'users/index'
-  get 'users/index'
-  get 'users/new'
-  post 'users/create'
-  delete 'users/:id', to: 'users#destroy'
-  
 
-  
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'users#index'
+  post "users/create"
 end

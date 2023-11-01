@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     user = User.new(uid: params[:uid], pass: BCrypt::Password.create(params[:pass]))
     user.save
     session[:login_uid] = params[:uid]
-    redirect_to users_index_path
+    redirect_to users_path
   end
 
   def destroy
