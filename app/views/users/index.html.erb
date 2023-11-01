@@ -4,6 +4,7 @@
 
 
 <h2>新規会員登録</h2>
+
 <%= form_tag '/users/create', method: :post, data: { turbo:false } do%>
     <%= label_tag :uid, 'ユーザーID' %>
     <%= text_field_tag :uid %></br>
