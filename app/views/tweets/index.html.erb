@@ -9,7 +9,7 @@
             <div>
                 <%= tweet.message %>
                 <%=link_to '削除', "/tweets/#{tweet.id}", data: { turbo_method: :delete } %>
-                <%= link_to 'いいね', likes_create_path(tweet_id: tweet.id), method: :post %>
+                <%= link_to 'いいね', likes_create_path(tweet_id: tweet.id), method: :post %><%= tweet.likes.count %>
                 <%= link_to 'いいね削除', likes_destroy_path(tweet_id: tweet.id), method: :delete %>
             </div>
         </p>

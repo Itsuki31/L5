@@ -2,16 +2,8 @@
     <%= flash[:notice] %>
 <% end %>
 
+<%= link_to '新規会員登録はこちら', new_user_path %></br>
 
-<h2>新規会員登録</h2>
-
-<%= form_tag '/users/create', method: :post, data: { turbo:false } do%>
-    <%= label_tag :uid, 'ユーザーID' %>
-    <%= text_field_tag :uid %></br>
-    <%= label_tag :pass, 'パスワード' %>
-    <%= password_field_tag :pass %></br>
-    <%= submit_tag '登録' %>
-<% end %>
 <%= link_to 'ログインはこちら', top_login_move_path %>
 
 
